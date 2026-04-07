@@ -3,7 +3,7 @@ package D0406;
 import java.util.*;
 import java.io.*;
 //수영장
-public class SWEA1952_수영장 {
+public class SWEA_1952_수영장 {
     static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static final BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static final StringBuilder sb = new StringBuilder();
