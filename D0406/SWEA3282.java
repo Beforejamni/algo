@@ -1,3 +1,4 @@
+package D0406;
 
 import java.util.*;
 import java.io.*;
