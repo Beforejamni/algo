@@ -12,7 +12,6 @@ public class BOJ_11723 {
         ALL("all"),
         EMPTY("empty");
 
-
         private final String original;
 
         Command(String original){
