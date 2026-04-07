@@ -33,8 +33,8 @@ def get_git_status(file_path):
 
 def parse_file_name(file_name):
     # 정규식 업데이트: 괄호(이름) 부분이 없어도 통과하도록 수정!
-    # 매칭 예시: BOJ_11723.java 또는 SWEA_2117(홈방범서비스).java
-    pattern = r"([A-Z]+)_(\d+)(?:\((.*)\))?\.java"
+    # 매칭 예시: BOJ_11723.java 또는 SWEA_2117_홈방범서비스.java
+    pattern = r"([A-Z]+)_(\d+)(?:_(.+))?\.java"
     match = re.match(pattern, file_name)
     
     if match:
