@@ -3,7 +3,7 @@ package D0401;
 import java.util.*;
 import java.io.*;
 
-public class SWEA_1294 {
+public class SWEA_1249_보급로 {
     static class Node{
         int r, c, cost;
         Node(int r, int c, int cost){

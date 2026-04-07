@@ -3,7 +3,7 @@ package D0406;
 import java.util.*;
 import java.io.*;
 
-public class SWEA3282 {
+public class SWEA3282_01Knapsack {
     static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static final BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static final StringBuilder sb = new StringBuilder();
