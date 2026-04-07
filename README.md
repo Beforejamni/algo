@@ -4,7 +4,7 @@
 
 ## 📌 Code Convention
 - **Package**: `DMMDD` 구조 (예: `D0401`)
-- **Class Name**: `플랫폼_번호(이름)` (예: `BOJ_11723(집합).java`)
+- **Class Name**: `플랫폼_번호_이름` / `백준_번호` (예: `SWEA_1249_보급로.java` exclude : `BOJ_2453.java`)
 - **Comment**: 코드 및 로직에 상세 주석 필수
 
 ---
