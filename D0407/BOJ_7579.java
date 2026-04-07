@@ -2,6 +2,7 @@ package D0407;
 
 import java.util.*;
 import java.io.*;
+//앱
 public class BOJ_7579 {
     static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static final BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

@@ -2,7 +2,7 @@ package D0401;
 
 import java.io.*;
 import java.util.*;
-
+//게리멘더링
 public class BOJ_17471 {
     static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static final BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
