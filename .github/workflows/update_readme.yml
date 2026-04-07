@@ -1,0 +1,32 @@
+name: Update README Problem List
+
+# D0401 같은 폴더 안에 변화가 푸시될 때만 작동
+on:
+  push:
+    paths:
+      - 'D[0-9][0-9][0-9][0-9]/**'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # ★중요★ 커밋 로그를 전부 가져와야 상태(PASS 등)를 읽을 수 있음!
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run Python Script (Update README)
+        run: python3 .github/scripts/generate_list.py
+
+      - name: Commit and Push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git commit -m "Chore: update README problem list [skip ci]" || exit 0
+          git push
