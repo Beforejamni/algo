@@ -1,5 +1,6 @@
 package D0406;
 
+
 import java.io.*;
 import java.util.*;
 
@@ -11,7 +12,7 @@ public class SWEA2383_점심식사시간 {
             this.c = c;
         }
     }
-
+    
     static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static final BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static final StringBuilder sb = new StringBuilder();

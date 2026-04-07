@@ -1,5 +1,6 @@
 package D0407;
 
+
 import java.util.*;
 import java.io.*;
 public class BOJ_7579 {

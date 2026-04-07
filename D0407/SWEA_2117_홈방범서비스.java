@@ -68,7 +68,6 @@ public class SWEA_2117_홈방범서비스 {
                     }
                 }
             }
-
             sb.append(resCnt).append("\n");
         }
         bw.write(sb.toString());
