@@ -75,15 +75,24 @@ def generate_list():
                 
                 final_content += f"| {platform} | {num} | {name} | {status} | {link} |\n"
     
+    # 80번 줄 근처: 여기서부터 수정!
     with open("README.md", "r", encoding="utf-8") as f:
         readme = f.read()
         
-    new_readme = re.sub(
-        r".*?",
-        f"\n{final_content}\n",
-        readme, 
-        flags=re.DOTALL
-    )
+    # 직접 타이핑해서 채워야 하는 구간!
+    start_tag = "<!-- PACKAGE_LIST_START -->"
+    end_tag = "<!-- PACKAGE_LIST_END -->"
+    
+    # 봇이 찾아낼 패턴 (시작태그부터 종료태그까지)
+    pattern = f"{re.escape(start_tag)}.*?{re.escape(end_tag)}"
+    replacement = f"{start_tag}\n{final_content}\n{end_tag}"
+    
+    # 리드미에 태그가 둘 다 있을 때만 교체 진행
+    if start_tag in readme and end_tag in readme:
+        new_readme = re.sub(pattern, replacement, readme, flags=re.DOTALL)
+    else:
+        # 태그가 없으면 리드미 뒤에 붙여서 보존 (안전장치)
+        new_readme = readme + "\n\n" + replacement
     
     with open("README.md", "w", encoding="utf-8") as f:
         f.write(new_readme)

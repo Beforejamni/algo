@@ -1,6 +1,6 @@
 # 🚀 Algorithm Study (Java)
 
-재민의 알고리즘 문제 풀이 저장소입니다.
+Beforejamn1의 알고리즘 문제 풀이 저장소입니다.
 
 ## 📌 Code Convention
 - **Package**: `DMMDD` 구조 (예: `D0401`)
@@ -37,3 +37,5 @@
 ---
 
 ## 📂 상세 풀이 현황
+<!-- PACKAGE_LIST_START -->>
+<!-- PACKAGE_LIST_END -->>
