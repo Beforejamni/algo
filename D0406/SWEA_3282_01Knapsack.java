@@ -43,10 +43,6 @@ public class SWEA_3282_01Knapsack {
                 }
             }
             int res = dp[N][MAX];
-
-            for(int[] a : dp){
-                System.out.println(Arrays.toString(a));
-            }
             sb.append(res).append("\n");
         }
         bw.write(sb.toString());
