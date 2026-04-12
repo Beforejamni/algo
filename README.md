@@ -42,8 +42,11 @@ Beforejamn1의 알고리즘 문제 풀이 저장소입니다.
 ### 📅 04월 12일 풀이
 | 플랫폼 | 번호 | 문제 이름 | 상태 | 링크 |
 | :--- | :--- | :--- | :--- | :--- |
+| SWEA | 1226 | 미로1 | ✅ PASS | - |
+| SWEA | 1238 | Contact | ✅ PASS | - |
 | SWEA | 22654 | 나무베기 | ✅ PASS | - |
 | SWEA | 22657 | 차윤이의RC카 | - | - |
+| SWEA | 5644 | 무선충전 | ✅ PASS | - |
 
 ### 📅 04월 11일 풀이
 | 플랫폼 | 번호 | 문제 이름 | 상태 | 링크 |
@@ -55,27 +58,27 @@ Beforejamn1의 알고리즘 문제 풀이 저장소입니다.
 ### 📅 04월 10일 풀이
 | 플랫폼 | 번호 | 문제 이름 | 상태 | 링크 |
 | :--- | :--- | :--- | :--- | :--- |
-| 백준 | 1238 | 파티 | ✅ PASS | [바로가기](https://www.acmicpc.net/problem/1238) |
+| 백준 | 1238 | 문제 1238 | ✅ PASS | [바로가기](https://www.acmicpc.net/problem/1238) |
 
 ### 📅 04월 09일 풀이
 | 플랫폼 | 번호 | 문제 이름 | 상태 | 링크 |
 | :--- | :--- | :--- | :--- | :--- |
-| 백준 | 17406 | 배열 돌리기 4 | ✅ PASS | [바로가기](https://www.acmicpc.net/problem/17406) |
-| 백준 | 2042 | 구간 합 구하기 | 🙋 SUP | [바로가기](https://www.acmicpc.net/problem/2042) |
-| 백준 | 5014 | 스타트링크 | ✅ PASS | [바로가기](https://www.acmicpc.net/problem/5014) |
+| 백준 | 17406 | 문제 17406 | ✅ PASS | [바로가기](https://www.acmicpc.net/problem/17406) |
+| 백준 | 2042 | 문제 2042 | 🙋 SUP | [바로가기](https://www.acmicpc.net/problem/2042) |
+| 백준 | 5014 | 문제 5014 | ✅ PASS | [바로가기](https://www.acmicpc.net/problem/5014) |
 
 ### 📅 04월 08일 풀이
 | 플랫폼 | 번호 | 문제 이름 | 상태 | 링크 |
 | :--- | :--- | :--- | :--- | :--- |
-| 백준 | 13710 | XOR 합 3 | 🙋 SUP | [바로가기](https://www.acmicpc.net/problem/13710) |
-| 백준 | 1932 | 정수 삼각형 | ✅ PASS | [바로가기](https://www.acmicpc.net/problem/1932) |
-| 백준 | 20058 | 마법사 상어와 파이어스톰 | ✅ PASS | [바로가기](https://www.acmicpc.net/problem/20058) |
+| 백준 | 13710 | 문제 13710 | 🙋 SUP | [바로가기](https://www.acmicpc.net/problem/13710) |
+| 백준 | 1932 | 문제 1932 | ✅ PASS | [바로가기](https://www.acmicpc.net/problem/1932) |
+| 백준 | 20058 | 문제 20058 | ✅ PASS | [바로가기](https://www.acmicpc.net/problem/20058) |
 
 ### 📅 04월 07일 풀이
 | 플랫폼 | 번호 | 문제 이름 | 상태 | 링크 |
 | :--- | :--- | :--- | :--- | :--- |
-| 백준 | 11723 | 집합 | ✅ PASS | [바로가기](https://www.acmicpc.net/problem/11723) |
-| 백준 | 7579 | 앱 | ✅ PASS | [바로가기](https://www.acmicpc.net/problem/7579) |
+| 백준 | 11723 | 문제 11723 | ✅ PASS | [바로가기](https://www.acmicpc.net/problem/11723) |
+| 백준 | 7579 | 문제 7579 | ✅ PASS | [바로가기](https://www.acmicpc.net/problem/7579) |
 | SWEA | 2117 | 홈방범서비스 | ✅ PASS | - |
 
 ### 📅 04월 06일 풀이
@@ -88,8 +91,8 @@ Beforejamn1의 알고리즘 문제 풀이 저장소입니다.
 ### 📅 04월 01일 풀이
 | 플랫폼 | 번호 | 문제 이름 | 상태 | 링크 |
 | :--- | :--- | :--- | :--- | :--- |
-| 백준 | 17471 | 게리맨더링 | ✅ PASS | [바로가기](https://www.acmicpc.net/problem/17471) |
-| 백준 | 2458 | 키 순서 | ✅ PASS | [바로가기](https://www.acmicpc.net/problem/2458) |
+| 백준 | 17471 | 문제 17471 | ✅ PASS | [바로가기](https://www.acmicpc.net/problem/17471) |
+| 백준 | 2458 | 문제 2458 | ✅ PASS | [바로가기](https://www.acmicpc.net/problem/2458) |
 | SWEA | 1249 | 보급로 | ✅ PASS | - |
 
 <!-- PACKAGE_LIST_END -->
