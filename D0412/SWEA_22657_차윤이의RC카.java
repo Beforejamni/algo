@@ -78,7 +78,6 @@ public class SWEA_22657_차윤이의RC카{
                 st = new StringTokenizer(br.readLine());
                 int cnt = Integer.parseInt(st.nextToken());
                 String cmds = st.nextToken();
-                System.out.println("cmd");
                 char dest = simulate(cnt, cmds);
                 if(dest == 'Y'){
                     sb.append(1).append(" ");
@@ -86,7 +85,9 @@ public class SWEA_22657_차윤이의RC카{
                     sb.append(0).append(" ");
                 }
             }
+            sb.append("\n");
         }
+        //then
         bw.write(sb.toString());
         bw.flush();
         bw.close();
@@ -100,7 +101,7 @@ public class SWEA_22657_차윤이의RC카{
         moveCar[0] = car[0];
         moveCar[1] = car[1];
 
-        for(int c = 0; c < cnt ; cnt++){
+        for(int c = 0; c < cnt ; c++){
             char cmd = cmds.charAt(c);
             if(cmd == 'A'){
                 int nr = moveCar[0] + dr[curdir];
