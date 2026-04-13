@@ -17,44 +17,54 @@ def get_boj_title(problem_id):
     except Exception as e:
         return f"문제 {problem_id}"
 
-def get_git_status(file_path):
-    """마지막 커밋 메시지에서 상태 추출"""
-    try:
-        msg = subprocess.check_output(
-            ["git", "log", "-1", "--pretty=%B", file_path]
-        ).decode("utf-8").strip()
-        
-        if "PASS" in msg: return "✅ PASS"
-        if "SUP" in msg: return "🙋 SUP"
-        if "PENDING" in msg: return "⏳ PENDING"
-        return "-"
-    except:
-        return "-"
-
 def parse_file_name(file_name):
-    # 정규식 업데이트: 괄호(이름) 부분이 없어도 통과하도록 수정!
-    # 매칭 예시: BOJ_11723.java 또는 SWEA_2117_홈방범서비스.java
-    pattern = r"([A-Z]+)_(\d+)(?:_(.+))?\.java"
-    match = re.match(pattern, file_name)
+    """
+    정규식 대신 split을 사용하여 영문, 하이픈, 공백이 포함된 파일명도 안전하게 분리합니다.
+    예: SWEA_123_name-PASS.java -> 플랫폼: SWEA, 번호: 123, 이름: name-PASS
+    """
+    if not file_name.endswith(".java"):
+        return None
+        
+    name_no_ext = file_name.replace(".java", "")
+    # '_'를 기준으로 최대 2번만 쪼갭니다.
+    parts = name_no_ext.split("_", 2)
     
-    if match:
-        p_code = match.group(1)
-        num = match.group(2)
-        name_in_file = match.group(3) # 괄호 안의 이름 (없으면 None)
+    if len(parts) >= 2:
+        p_code = parts[0] # BOJ, SWEA 등
+        num = parts[1]    # 문제 번호
+        # 이름이 있으면 쓰고, 없으면 번호를 이름으로 씀
+        name_in_file = parts[2] if len(parts) > 2 else f"문제 {num}"
         
         p_map = {"BOJ": "백준", "SWEA": "SWEA", "PRO": "프로그래머스"}
         platform = p_map.get(p_code, p_code)
         
-        # 이름 결정 로직
         if p_code == "BOJ":
-            name = get_boj_title(num) # 백준이면 API로 무조건 검색!
-            time.sleep(0.1) # API 서버 무리 안 가게 살짝 쉬어줌
+            name = get_boj_title(num)
         else:
-            # 백준이 아닌데 괄호 이름이 있으면 그거 쓰고, 없으면 번호를 이름으로 씀
-            name = name_in_file if name_in_file else f"문제 {num}"
+            name = name_in_file
             
         return platform, num, name
     return None
+
+def get_git_status(file_path):
+    """
+    커밋 메시지 본문에서 상태 키워드를 찾습니다.
+    """
+    try:
+        # git log -1 --pretty=%B "폴더/파일명.java"
+        # 명령어 실행 시 경로 문제를 방지하기 위해 file_path를 그대로 전달
+        msg = subprocess.check_output(
+            ["git", "log", "-1", "--pretty=%B", file_path],
+            stderr=subprocess.STDOUT
+        ).decode("utf-8").upper() # 대문자로 변환하여 비교
+        
+        # 커밋 메시지 안에 PASS, SUP 등이 포함되어 있는지 확인
+        if "PASS" in msg: return "✅ PASS"
+        if "SUP" in msg: return "🙋 SUP"
+        if "PENDING" in msg: return "⏳ PENDING"
+        return "-"
+    except Exception:
+        return "-"
 
 def generate_list():
     dirs = sorted([d for d in os.listdir(".") if re.match(r'D\d{4}', d)], reverse=True)
