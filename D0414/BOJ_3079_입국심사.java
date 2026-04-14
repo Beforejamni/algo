@@ -29,7 +29,7 @@ public class BOJ_3079_입국심사 {
         // when
         Arrays.sort(arr);
 
-        INF = Math.multiplyExact(arr[0], M);
+        INF = Math.multiplyExact(arr[N - 1], M);
 
         long result = 0;
         long start = 1;
@@ -43,6 +43,8 @@ public class BOJ_3079_입국심사 {
                 start = mid + 1;
             }
         }
+
+        // then
         sb.append(result).append("\n");
         bw.write(sb.toString());
         bw.flush();
@@ -57,10 +59,10 @@ public class BOJ_3079_입국심사 {
                 break;
             }
             passCnt += TTL / t;
-            if (passCnt < M) {
-                return true;
+            if (passCnt >= M) {
+                return false;
             }
         }
-        return false;
+        return passCnt < M;
     }
 }
