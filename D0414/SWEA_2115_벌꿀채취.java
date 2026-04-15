@@ -3,7 +3,7 @@ package D0414;
 import java.io.*;
 import java.util.*;
 
-public class SWEA2115_벌꿀채취 {
+public class SWEA_2115_벌꿀채취 {
     static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static final BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static final StringBuilder sb = new StringBuilder();
