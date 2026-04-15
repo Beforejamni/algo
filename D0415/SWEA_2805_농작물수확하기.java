@@ -3,7 +3,7 @@ package D0415;
 import java.io.*;
 import java.util.*;
 
-public class SWEA_2805_농작물수학하기 {
+public class SWEA_2805_농작물수확하기 {
     static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static final BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static final StringBuilder sb = new StringBuilder();
