@@ -22,7 +22,7 @@ public class SWEA_1824_혁진이의프로그램검증 {
         for (int t = 1; t <= T; t++) {
             sb.append("#").append(t).append(" ");
 
-            // when
+            // given
             st = new StringTokenizer(br.readLine());
             R = Integer.parseInt(st.nextToken());
             C = Integer.parseInt(st.nextToken());
@@ -34,7 +34,7 @@ public class SWEA_1824_혁진이의프로그램검증 {
                     map[i][j] = row.charAt(j);
                 }
             }
-
+            // when & then
             if (bfs()) {
                 sb.append("YES");
             } else {
@@ -53,6 +53,7 @@ public class SWEA_1824_혁진이의프로그램검증 {
         visited = new boolean[R][C][16][4];
 
         int mem = 0;
+        // 첫 시작은 좌측 상단 + 이동 방향은 우측
         que.offer(new int[] { 0, 0, mem, 3 });
         visited[0][0][mem][3] = true;
 
@@ -62,23 +63,30 @@ public class SWEA_1824_혁진이의프로그램검증 {
             int cr = cur[0];
             int cc = cur[1];
 
+            // 꺼내서 확인 했는데 @ 면 종료 가능
             if (map[cr][cc] == '@') {
                 return true;
             }
 
             int cmem = cur[2];
             int cd = cur[3];
+
+            // ? 이면 4방향으로 넘겨주기
             if (map[cr][cc] == '?') {
                 for (int d = 0; d < 4; d++) {
+                    // 다은 r , c 값 가져오기
                     int nr = rotationIdx(cr, dr[d], R);
                     int nc = rotationIdx(cc, dc[d], C);
+                    // 범위 탐색 한 번 더
                     if (nr >= 0 && nr < R && nc >= 0 && nc < C && !visited[nr][nc][cmem][d]) {
                         visited[nr][nc][cmem][d] = true;
                         que.offer(new int[] { nr, nc, cmem, d });
                     }
                 }
             } else {
-                int[] next = excuteCmt(cr, cc, cmem, cd);
+                // 명령어 실행 후
+                int[] next = excuteCmd(cr, cc, cmem, cd);
+                // 다음 nr, nc
                 int nr = next[0];
                 int nc = next[1];
                 if (nr >= 0 && nr < R && nc >= 0 && nc < C && !visited[nr][nc][next[2]][next[3]]) {
@@ -91,7 +99,7 @@ public class SWEA_1824_혁진이의프로그램검증 {
         return false;
     }
 
-    static int[] excuteCmt(int r, int c, int mem, int d) {
+    static int[] excuteCmd(int r, int c, int mem, int d) {
         char cmd = map[r][c];
 
         switch (cmd) {
@@ -120,7 +128,7 @@ public class SWEA_1824_혁진이의프로그램검증 {
                 mem = mem > 0 ? mem - 1 : 15;
                 break;
             default:
-                if ('0' < cmd && cmd < '9') {
+                if ('0' <= cmd && cmd <= '9') {
                     mem = getmeory(r, c);
                 }
                 break;
@@ -141,8 +149,8 @@ public class SWEA_1824_혁진이의프로그램검증 {
         return memory;
     }
 
-    static int rotationIdx(int idx, int d, int typeMax) {
-        int temp = idx + d;
+    static int rotationIdx(int idx, int move, int typeMax) {
+        int temp = idx + move;
         if (temp < 0) {
             temp = typeMax - 1;
         } else if (temp >= typeMax) {
