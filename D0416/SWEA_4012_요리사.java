@@ -41,8 +41,8 @@ public class SWEA_4012_요리사 {
 
     static void dfs(int depth, int idx) {
         if (depth == (N >> 1)) {
-            int tempDiff = findDiff();
-            result = result > tempDiff ? tempDiff : result;
+            int diff = findDiff();
+            result = result < diff ? result : diff;
             return;
         }
 
@@ -52,7 +52,7 @@ public class SWEA_4012_요리사 {
             selelcted[i] = true;
             dfs(depth + 1, i + 1);
             selelcted[i] = false;
-            dfs(depth + 1, i + 1);
+            ;
         }
     }
 
