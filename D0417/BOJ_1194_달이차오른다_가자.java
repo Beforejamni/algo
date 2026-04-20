@@ -39,7 +39,8 @@ public class BOJ_1194_달이차오른다_가자 {
         que.add(new int[] { start[0], start[1], 0, 0 });
         visited[start[0]][start[1]][0] = true;
 
-        int result = 0;
+        // 없을 경우 -1 출력
+        int result = -1;
 
         while (!que.isEmpty()) {
             int[] cur = que.poll();
@@ -49,32 +50,31 @@ public class BOJ_1194_달이차오른다_가자 {
                 break;
             }
 
-            int keys = cur[3];
-
             for (int d = 0; d < 4; d++) {
                 int nr = cur[0] + dr[d];
                 int nc = cur[1] + dc[d];
                 if (nr >= 0 && nr < N && nc >= 0 && nc < M && map[nr][nc] != '#') {
+                    int keys = cur[3];
                     int status = map[nr][nc];
                     if (visited[nr][nc][keys])
                         continue;
 
                     // 열쇠가 자리
                     if ('a' <= status && status <= 'f') {
-                        keys = keys | (1 << status);
+                        keys = keys | (1 << (status - 'a'));
                         visited[nr][nc][keys] = true;
-                        que.add(new int[] { nr, nc, cur[2], keys });
+                        que.add(new int[] { nr, nc, cur[2] + 1, keys });
                     }
 
                     // 문 자리
-                    if ('A' <= status && status <= 'F') {
-                        if ((keys & 1 << status) == 1) {
+                    else if ('A' <= status && status <= 'F') {
+                        if ((keys & 1 << (status - 'A')) != 0) {
                             visited[nr][nc][keys] = true;
                             que.add(new int[] { nr, nc, cur[2] + 1, keys });
                         }
                     }
 
-                    if (status == '.') {
+                    else {
                         visited[nr][nc][keys] = true;
                         que.add(new int[] { nr, nc, cur[2] + 1, keys });
                     }
